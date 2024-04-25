@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Информация о пациенте</title>
+</head>
+<body>
+    <h1>Информация о пациенте</h1>
+    {% if patient %}
+        <p>Имя: {{ patient.name }}</p>
+        <p>Дата рождения: {{ patient.birthdate }}</p>
+        <p>Диагноз: {{ patient.diagnosis }}</p>
+        <p>Симптомы: {{ patient.symptoms }}</p>
+        <p>Аллергии: {{ patient.allergies }}</p>
+        <p>Медицинская история: {{ patient.medical_history }}</p>
+        <p>Текущее лечение: {{ patient.current_medication }}</p>
+    {% else %}
+        <p>Пациент не найден.</p>
+    {% endif %}
+</body>
+</html>

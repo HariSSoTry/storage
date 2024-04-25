@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Поиск пациентов</title>
+</head>
+<body>
+    <h1>Поиск пациентов</h1>
+    <form action="{% url 'search_patients' %}" method="get">
+        <label for="search_term">Поиск по имени:</label>
+        <input type="text" id="search_term" name="search_term"><br>
+        <input type="submit" value="Найти">
+    </form>
+    {% if patients %}
+        <ul>
+            {% for patient in patients %}
+                <li><a href="{% url 'view_patient_info' patient.name %}">{{ patient.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Пациенты не найдены.</p>
+    {% endif %}
+</body>
+</html>

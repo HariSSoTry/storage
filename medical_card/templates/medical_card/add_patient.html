@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Добавление пациента</title>
+</head>
+<body>
+    <h1>Добавление пациента</h1>
+    <form action="{% url 'add_patient' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Имя пациента:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="birthdate">Дата рождения:</label>
+        <input type="date" id="birthdate" name="birthdate"><br>
+        <label for="diagnosis">Диагноз:</label>
+        <input type="text" id="diagnosis" name="diagnosis"><br>
+        <label for="symptoms">Симптомы:</label>
+        <input type="text" id="symptoms" name="symptoms"><br>
+        <label for="allergies">Аллергии:</label>
+        <input type="text" id="allergies" name="allergies"><br>
+        <label for="medical_history">Медицинская история:</label>
+        <input type="text" id="medical_history" name="medical_history"><br>
+        <label for="current_medication">Текущее лечение:</label>
+        <input type="text" id="current_medication" name="current_medication"><br>
+        <input type="submit" value="Добавить">
+    </form>
+</body>
+</html>
