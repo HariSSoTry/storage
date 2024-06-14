@@ -29,7 +29,8 @@ class Disease(models.Model):
         return self.name
 
     def last_recommendation(self):
-        pass
+        all_recommendations = self.recommendation_set.all()
+        return all_recommendations.order_by('date').last()
 
 
 class Patient(models.Model):
