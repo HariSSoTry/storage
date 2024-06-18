@@ -1,0 +1,8 @@
+<!-- templates/home.html -->
+<h1>Documents</h1>
+<ul>
+  {% for document in object_list %}
+    <h2>{{ document.title }}</h2>
+    <img src="{{ document.link.url}}" alt="{{ document.title }}">
+  {% endfor %}
+</ul>

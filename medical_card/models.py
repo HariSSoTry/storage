@@ -109,7 +109,7 @@ class Document(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название')
     content = models.TextField(verbose_name='Описание')
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='Пациент')
-    link = models.CharField(max_length=200)
+    link = models.FileField(upload_to='images/')
 
     class Meta:
         verbose_name = 'Документ'
