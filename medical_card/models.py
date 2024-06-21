@@ -35,7 +35,6 @@ class Disease(models.Model):
 
 class Patient(models.Model):
     """Пациенты"""
-    name = models.CharField(max_length=200, verbose_name='Имя Фамилия')
     first_name = models.CharField(max_length=30, null=True, verbose_name='Имя')
     last_name = models.CharField(max_length=30, null=True, verbose_name='Фамилия')
     birthdate = models.DateField(blank=True, null=True, verbose_name='Дата рождения')
@@ -46,13 +45,7 @@ class Patient(models.Model):
         verbose_name_plural = 'Пациенты'
 
     def __str__(self):
-        return self.name
-
-    def current_medication(self):   # todo добавить как метод для пациента
-        pass
-
-    def medical_history(self):
-        pass
+        return f"{self.last_name} {self.first_name}"
 
 
 class Diagnosis(models.Model):
